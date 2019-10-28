@@ -31,7 +31,7 @@ function integrateGitalk(router) {
       commentsContainer.classList.add('content');
     }
     commentsContainer.innerHTML = "";
-    const $page = document.querySelector('.page');
+    const $page = document.querySelector('.page .content__default');
     if ($page) {
       $page.appendChild(commentsContainer);
         setTimeout(() => {
