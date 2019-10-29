@@ -2,9 +2,10 @@
 title: JavaScript 偵測黑暗模式
 date: 2019-10-29
 categories: 
- - JavaScript
+ - Note
 tags: 
  - javaScript
+ - css
 ---
 
 最近越來越多裝置支援黑暗模式了  

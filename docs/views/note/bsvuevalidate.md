@@ -2,11 +2,12 @@
 title: BootstrapVue 表單驗證
 date: 2019-10-27
 categories: 
- - Vue
+ - Note
 tags: 
  - vue
  - veevalidate
  - bootstrapvue
+ - javascript
 ---
 
 最近在使用 [BootstrapVue](https://bootstrap-vue.js.org/) 製作網頁，需要驗證互動視窗內表單輸入資料  
@@ -160,3 +161,6 @@ export default {
   }
 };
 ```
+
+## 效果圖
+![效果gif](/images/bsvuevalidate.gif)
