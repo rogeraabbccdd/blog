@@ -22,8 +22,8 @@ module.exports = {
   ],
   themeConfig: {
     intro: "🍰 It's Muffin Time!",
-    darkTheme: true,
-    themePicker: false,
+    themePicker: true,
+    defaultDark: true,
     GAID: "UA-131804412-11",
     infoSMS: [
       {

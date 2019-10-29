@@ -8,7 +8,8 @@
 				<a href="#" :class="`${key}-theme`" :style="{background: value}" @click.prevent="setTheme(key)"></a>
 			</li>
 		</ul>
-    <input type="checkbox" id="dark-check" style="vertical-align: middle;" v-model="darkTheme">
+    <input type="radio" id="dark-check" style="vertical-align: middle;" v-if="isPreferDark" checked>
+    <input type="checkbox" id="dark-check" style="vertical-align: middle;" v-model="darkTheme" v-else>
     <label for="dark-check">Enable Dark Theme</label>
 	</div>
 </template>
@@ -33,6 +34,12 @@ export default {
         green: '#3eaf7c',
         orange: '#fb9b5f'
       }
+    },
+    isPreferDark () {
+      return window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue('content')
+        .replace(/"/g, '') === 'dark'
     }
   },
 
@@ -40,13 +47,13 @@ export default {
     const theme = localStorage.getItem('reco-theme')
     if (theme) this.setTheme(theme)
 
+    // local storage
     const dark = localStorage.getItem('reco-dark')
-    if(dark)  this.darkTheme = dark
-    else if(this.$themeConfig.darkTheme) this.darkTheme = this.$themeConfig.darkTheme
+    if(dark || this.isPreferDark)  this.darkTheme = true
+    else if(this.$themeConfig.defaultDark) this.darkTheme = this.$themeConfig.defaultDark
     else this.darkTheme = false
     localStorage.setItem('reco-dark', this.darkTheme)
     this.setDarkTheme()
-    console.log("mounted");
   },
 
   methods: {
