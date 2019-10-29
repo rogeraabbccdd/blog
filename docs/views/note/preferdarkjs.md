@@ -46,4 +46,4 @@ if(isPreferDark) console.log('It\'s dark mode!');
 ```
 
 ## 效果圖
-![效果gif](/images/preferdark.gif)
+<img :src="$withBase('/images/preferdark.gif')" alt="效果gif">

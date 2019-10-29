@@ -163,4 +163,4 @@ export default {
 ```
 
 ## 效果圖
-![效果gif](/images/bsvuevalidate.gif)
+<img :src="$withBase('/images/bsvuevalidate.gif')" alt="效果gif">
